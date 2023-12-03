@@ -1,0 +1,37 @@
+%btn {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.5px;
+  color: #fafafb;
+
+  background-color: #f07f2e;
+  border: none;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    background-color: #f15c27;
+    box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
+  }
+}
+
+.btn-sm {
+  @extend %btn;
+
+  display: inline-flex;
+  padding: 4px 8px;
+}
+.btn-md {
+  @extend %btn;
+
+  display: inline-flex;
+  padding: 8px 12px;
+}
+.btn-lg {
+  @extend %btn;
+
+  display: inline-flex;
+  padding: 16px 20px;
+}

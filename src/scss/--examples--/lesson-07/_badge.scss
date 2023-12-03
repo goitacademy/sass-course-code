@@ -1,0 +1,35 @@
+.badge-info {
+  color: #b5b5be;
+  font-size: 14px;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.5px;
+  text-align: right;
+}
+.badge {
+  min-width: 96px;
+  padding: 4px 8px;
+
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.07px;
+
+  border-radius: 20px;
+  background-color: #92929d;
+}
+
+// Practice
+$status: (
+  "completed": #a461d8,
+  "ended": #fc5a5a,
+  "active": #82c43c,
+);
+
+@each $status-text, $color in $status {
+  .badge-#{$status-text} {
+    background-color: $color;
+  }
+}

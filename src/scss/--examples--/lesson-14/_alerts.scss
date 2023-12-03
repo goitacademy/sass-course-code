@@ -1,0 +1,14 @@
+$types: (
+  "primary": #f07f2e,
+  "success": #82c43c,
+  "danger": #fc5a5a,
+  "warning": #a461d8,
+  "info": #4e75ff,
+);
+
+/* Генеруємо набір класів повідомлень */
+@each $key, $value in $types {
+  .alert-#{$key} {
+    background-color: $value;
+  }
+}

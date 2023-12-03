@@ -1,0 +1,44 @@
+// .link {
+//   color: black;
+
+//   &:hover,
+//   &:focus {
+//     color: red;
+//   }
+// }
+
+.button {
+  background: teal {
+    position: center;
+    repeat: no-repeat;
+  }
+
+  // color: red;
+
+  &:hover,
+  &:focus {
+    color: blue;
+  }
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+
+  &:hover {
+    width: 50px;
+    height: 50px;
+  }
+
+  .button:hover & {
+    font-size: 20px;
+  }
+}
+
+.button-label {
+  font-size: 16px;
+
+  .button:hover & {
+    font-size: 20px;
+  }
+}

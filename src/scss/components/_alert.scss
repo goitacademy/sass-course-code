@@ -1,0 +1,29 @@
+// Extending selectors
+// .notification {
+//   border-radius: 10px;
+
+//   > .icon {
+//     display: block;
+//   }
+// }
+div:not(:last-child) {
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.notification-icon,
+.notification-btn-icon {
+  fill: currentColor;
+}
+
+.notification-text {
+  margin: 0;
+  flex-grow: 1;
+}
+.notification-btn {
+  font-family: inherit;
+  color: currentColor;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

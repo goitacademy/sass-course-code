@@ -1,0 +1,34 @@
+@use "decimal" as *;
+@use "functions" as *;
+
+@mixin fonts($fs, $fw: null, $lh: null, $ls: null, $align: null) {
+  @if $fs {
+    font-size: $fs;
+  }
+
+  @if $fw {
+    font-weight: $fw;
+  }
+
+  @if $lh {
+    @if $lh == normal {
+      line-height: normal;
+    } @else {
+      $lh: calc(strip-unit($lh) / strip-unit($fs));
+      line-height: decimal-round($lh, 2);
+    }
+  }
+
+  @if $ls {
+    @if $ls == normal {
+      letter-spacing: normal;
+    } @else {
+      $ls: calc(strip-unit($ls) / strip-unit($fs));
+      letter-spacing: #{decimal-round($ls, 2)}em;
+    }
+  }
+
+  @if $align {
+    text-align: $align;
+  }
+}

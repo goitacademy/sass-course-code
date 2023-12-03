@@ -1,0 +1,32 @@
+@use "sass:map";
+
+// |============================
+// | Набір змінних не повʼязаних
+// | між собою
+// |============================
+$color-primary: #8e3329;
+$color-accent: #d98328;
+$color-secondary: #5a1321;
+$color-foreground: #191919;
+$color-background: #e9e9e9;
+
+// |============================
+// | Обєʼднані значення (мапа)
+// |============================
+$colors: (
+  "primary": #8e3329,
+  "accent": #d98328,
+  "secondary": #5a1321,
+  "foreground": #191919,
+  "background": #e9e9e9,
+);
+
+/*  Отримуємо значення з мапи */
+body {
+  background-color: map.get($colors, "background");
+}
+
+// Функція-утиліта для доступу до властивостей мапи
+@function get-color($key) {
+  @return map.get($colors, $key);
+}

@@ -1,0 +1,65 @@
+body {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+
+  background-color: #292932;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+
+  width: 589px;
+  padding: 24px;
+
+  background-color: #1c1c24;
+  border-radius: 12px;
+}
+.task-caption {
+  margin-bottom: 8px;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #fafafb;
+}
+.task-deadline {
+  margin-bottom: 18px;
+
+  color: #fafafb;
+  font-size: 14px;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.5px;
+}
+.task-deadline-date {
+  color: #b5b5be;
+}
+
+.performer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.performer-avatar {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.performer-bio {
+  color: #b5b5be;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+.task-badges {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

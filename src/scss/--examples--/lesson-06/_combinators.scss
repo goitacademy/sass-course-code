@@ -1,0 +1,48 @@
+// // descendant selector
+// div p {
+//   /* Вибере всі <p> елементи, які є нащадками для <div> */
+//   color: black;
+// }
+
+// // child selector
+// div > p {
+//   /* Вибере всі <p> елементи, які є безпосередніми дітьми <div> */
+//   color: black;
+// }
+
+// // adjacent sibling selector
+// h2 + p {
+//   /* Вибере елемент <p>, який є наступним сусідом <h2> */
+//   color: black;
+// }
+
+// // general sibling selector
+// h2 ~ p {
+//   /* Вибере всі <p> елементи, які є наступними сусідами <h2> */
+//   color: black;
+// }
+
+/**
+  |============================
+  | Using combinators in SASS
+  |============================
+*/
+ul > {
+  li {
+    list-style: none;
+  }
+}
+
+h2 {
+  + p {
+    border-top: 1px solid gray;
+  }
+}
+
+p {
+  ~ {
+    span {
+      opacity: 0.8;
+    }
+  }
+}

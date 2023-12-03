@@ -1,0 +1,10 @@
+@use "./colors" as c;
+
+/*
+   Перевикористовуємо мапу кольорів
+   для стилізації кнопки
+*/
+.button {
+  color: c.get-color("primary");
+  background-color: c.get-color("background");
+}

@@ -1,0 +1,16 @@
+/*|============================
+  | Створити класи для бейджів
+  |============================
+*/
+
+.badge-completed {
+  background-color: #a461d8;
+}
+
+.badge-ended {
+  background-color: #fc5a5a;
+}
+
+.badge-active {
+  background-color: #82c43c;
+}
