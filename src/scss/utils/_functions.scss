@@ -1,0 +1,30 @@
+@use "sass:math";
+
+/// Функція для видалення одиниць виміру з виразу
+/// @param  {String} $value Значення з одиницями виміру в "px"
+/// @return {Number} Число без одиниць виміру
+/// @example
+///     strip-unit(12px) => 12
+
+@function strip-unit($value) {
+  @if type-of($value) != "number" {
+    @error "#{$value} is not a number.";
+  }
+
+  @if type-of($value) == "number" and not unitless($value) {
+    @return math.div($value, ($value * 0 + 1));
+  }
+
+  @return $value;
+}
+
+/// Функція для конвертації "px" в "rem"
+/// @param  {String} $px-value Значення, яке потрібно конвертувати в "px"
+/// @param  {String} [$base-font-size: 16px] Базове значення відносно якого буде відбуватися обрахунок
+/// @return {String} Конвертоване значення в "rem"
+/// @example
+///     rem(1000px) => 62.5rem
+
+@function rem($px-value, $base-font-size: 16px) {
+  @return #{math.div(strip-unit($px-value), strip-unit($base-font-size))}rem;
+}

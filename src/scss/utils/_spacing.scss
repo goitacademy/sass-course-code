@@ -1,0 +1,59 @@
+@use "variables" as *;
+// Збираємо в мапи
+// Набори відступів
+$spacers: (
+  "0": 0,
+  xxs: $spacer-xxs,
+  xs: $spacer-xs,
+  s: $spacer-s,
+  m: $spacer-m,
+  l: $spacer-l,
+  xl: $spacer-xl,
+  xxl: $spacer-xxl,
+);
+
+// Види відступів
+$types: (
+  "m": "margin",
+  "p": "padding",
+);
+
+// Сторони для відступів
+$sides: (
+  "": "",
+  t: "-top",
+  r: "-right",
+  b: "-bottom",
+  l: "-left",
+);
+
+// Перебираємо значення для відступів
+@each $key-spacer, $factor in $spacers {
+  // Перебираємо типи відступів
+  @each $key-type, $type in $types {
+    // Перебираємо сторони
+    @each $key-side, $side in $sides {
+      // Генеруємо набір класів для всіх значень, типів, сторін
+      .#{$key-type}#{$key-side}-#{$key-spacer} {
+        #{$type}#{$side}: $factor;
+      }
+    }
+
+    // Генеруємо набір класів для горизонтальних відступів
+    .#{$key-type}x-#{$key-spacer} {
+      #{$type}-left: $factor;
+      #{$type}-right: $factor;
+    }
+
+    // Генеруємо набір класів для вертикальних відступів
+    .#{$key-type}y-#{$key-spacer} {
+      #{$type}-bottom: $factor;
+      #{$type}-top: $factor;
+    }
+  }
+
+  // Простір між елементами для флекс або грід контейнерів
+  .gap-#{$key-spacer} {
+    gap: $factor;
+  }
+}

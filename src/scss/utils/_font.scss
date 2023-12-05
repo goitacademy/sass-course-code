@@ -1,0 +1,27 @@
+@use "variables" as *;
+// Перелік розмірів шрифта
+$font-sizes: (
+  "0": 0,
+  xxs: $fs-xxs,
+  xs: $fs-xs,
+  s: $fs-s,
+  m: $fs-m,
+  l: $fs-l,
+  xl: $fs-xl,
+  xxl: $fs-xxl,
+);
+// Перебираємо мапу розмірів
+@each $size, $factor in $font-sizes {
+  .fs-#{$size} {
+    font-size: $factor;
+  }
+}
+
+// Перелік варіантів товщини накреслення
+$weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+// Перебираємо список накреслень текту
+@each $w in $weight {
+  .fw-#{$w} {
+    font-weight: $w;
+  }
+}

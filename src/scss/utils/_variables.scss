@@ -1,0 +1,50 @@
+// Мінімальна та максимальна ширина області перегляду з макету
+$min-w: 375px;
+$max-w: 1440px;
+
+// Відступи
+$spacer-base: 30px;
+
+$spacer-xxs: 0.25 * $spacer-base;
+$spacer-xs: 0.5 * $spacer-base;
+$spacer-s: 0.75 * $spacer-base;
+$spacer-m: $spacer-base;
+$spacer-l: 1.5 * $spacer-base;
+$spacer-xl: 2 * $spacer-base;
+$spacer-xxl: 2.25 * $spacer-base;
+
+// Розміри шрифтів
+$fs-base: 16px;
+
+$fs-xxs: 11px;
+$fs-xs: 12px;
+$fs-s: 14px;
+$fs-m: $fs-base;
+$fs-l: 22px;
+$fs-xl: 24px;
+$fs-xxl: 26px;
+
+// Палітра кольорів
+// Base
+$primary: #f07f2e;
+$success: #82c43c;
+$info: #4e75ff;
+$warning: #a461d8;
+$danger: #fc5a5a;
+$light: #92929d;
+$dark: #13131a;
+// Additional
+$gray: #b5b5be;
+$bg-secondary-1: #1c1c24;
+$bg-secondary-2: #292932;
+$text-primary-1: #f15c27;
+$text-primary-2: #d14a00;
+$white: #fff;
+$black: #000;
+
+// Брейкпоінти
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;

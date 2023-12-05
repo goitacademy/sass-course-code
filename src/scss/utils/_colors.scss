@@ -1,0 +1,38 @@
+@use "variables" as *;
+// Перелік кольорів
+$colors: (
+  "primary": $primary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "gray": $gray,
+  "bg-secondary-1": $bg-secondary-1,
+  "bg-secondary-2": $bg-secondary-2,
+  "text-primary-1": $text-primary-1,
+  "text-primary-2": $text-primary-2,
+  "white": $white,
+  "black": $black,
+);
+
+// Перебираємо мапу кольорів
+@each $name, $color in $colors {
+  // колір тексту
+  .color-#{$name} {
+    color: $color;
+  }
+
+  // колір фона
+  .bg-#{$name} {
+    background-color: $color;
+  }
+
+  // заливка `svg`
+  .fill-#{$name} {
+    svg {
+      color: $color;
+    }
+  }
+}

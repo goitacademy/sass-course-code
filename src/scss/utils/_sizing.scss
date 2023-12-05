@@ -1,0 +1,21 @@
+$column: 1;
+$columns: 12;
+
+@for $i from $column through $columns {
+  .w-#{$i} {
+    width: calc(100% / $columns * $i);
+  }
+
+  .h-#{$i} {
+    height: calc(100% / $columns * $i);
+  }
+}
+
+// Повна ширина/висота відносно вʼюпорту
+.w-full {
+  width: 100vw;
+}
+
+.h-full {
+  height: 100vh;
+}
