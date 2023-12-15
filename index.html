@@ -7,92 +7,92 @@
     <title>Final Project</title>
   </head>
   <body class="page">
-    <div class="backdrop js-menu" id="sidebar-menu">
-      <aside class="menu">
-        <button class="menu-btn js-menu-close" type="button">
-          <svg class="menu-btn-icon" width="20" height="20">
-            <use href="./src/img/icons.svg#icon-x-close"></use>
-          </svg>
-        </button>
+    <!-- <div class=" " > -->
+    <aside class="menu backdrop js-menu" id="sidebar-menu">
+      <button class="menu-btn js-menu-close" type="button">
+        <svg class="menu-btn-icon" width="20" height="20">
+          <use href="./src/img/icons.svg#icon-x-close"></use>
+        </svg>
+      </button>
+      <nav class="menu-nav">
         <a class="logo" href="./index.html">
           <svg class="logo-icon" width="24" height="24">
             <use href="./src/img/icons.svg#icon-logo"></use>
           </svg>
           Cat CRM
         </a>
-        <nav class="menu-nav">
-          <ul class="menu-list">
-            <li class="menu-item">
-              <a class="menu-link current" href="./index.html">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-columns"></use>
-                </svg>
-                Overview
-              </a>
-            </li>
-            <li class="menu-item">
-              <a class="menu-link" href="">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-person-plus"></use>
-                </svg>
-                Contacts
-              </a>
-            </li>
-            <li class="menu-item">
-              <a class="menu-link" href="">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-briefcase"></use>
-                </svg>
-                Companies
-              </a>
-            </li>
-            <li class="menu-item">
-              <a class="menu-link" href="">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-coin"></use>
-                </svg>
-                Deals
-              </a>
-            </li>
-            <li class="menu-item">
-              <a class="menu-link" href="">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-clipboard"></use>
-                </svg>
-                Document
-              </a>
-            </li>
-            <li class="menu-item">
-              <a class="menu-link" href="">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-envelope"></use>
-                </svg>
-                Mesage
-                <span class="menu-notification notification">8</span>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a class="menu-link" href="">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-calendar"></use>
-                </svg>
-                Calendar
-              </a>
-            </li>
-            <li class="menu-item">
-              <a class="menu-link" href="">
-                <svg class="menu-icon" width="20" height="20">
-                  <use href="./src/img/icons.svg#menu-journal"></use>
-                </svg>
-                Report
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div>
 
-    <!-- <div class="wrapper"> -->
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a class="menu-link current" href="./index.html">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-columns"></use>
+              </svg>
+              Overview
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-person-plus"></use>
+              </svg>
+              Contacts
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-briefcase"></use>
+              </svg>
+              Companies
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-coin"></use>
+              </svg>
+              Deals
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-clipboard"></use>
+              </svg>
+              Document
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-envelope"></use>
+              </svg>
+              Mesage
+              <span class="menu-notification notification">8</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-calendar"></use>
+              </svg>
+              Calendar
+            </a>
+          </li>
+          <li class="menu-item">
+            <a class="menu-link" href="">
+              <svg class="menu-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#menu-journal"></use>
+              </svg>
+              Report
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- </div> -->
+
     <header class="header">
       <button
         class="menu-btn js-menu-open"
@@ -125,6 +125,7 @@
         </svg>
       </button>
     </header>
+
     <main class="main-content">
       <section class="welcome">
         <h1 class="page-title">
@@ -699,7 +700,16 @@
         <h2 class="tasks-title"><span>Tasks (5) </span>| Today</h2>
         <ul class="tasks-list">
           <li class="tasks-item">
-            <input class="tasks-input" type="checkbox" name="task_status" />
+            <label class="tasks-checkbox">
+              <input
+                class="tasks-input visually-hidden"
+                type="checkbox"
+                name="task_status"
+                value="unfinished" />
+              <svg class="tasks-checkbox-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#icon-done"></use>
+              </svg>
+            </label>
             <div class="tasks-info">
               <h3 class="tasks-heading">Update the documentation</h3>
               <p class="tasks-desc">
@@ -713,7 +723,17 @@
             </button>
           </li>
           <li class="tasks-item">
-            <input class="tasks-input" type="checkbox" name="task_status" />
+            <label class="tasks-checkbox">
+              <input
+                class="tasks-input visually-hidden"
+                type="checkbox"
+                name="task_status"
+                value="unfinished"
+                checked />
+              <svg class="tasks-checkbox-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#icon-done"></use>
+              </svg>
+            </label>
             <div class="tasks-info">
               <h3 class="tasks-heading">GDPR Compliance</h3>
               <p class="tasks-desc">
@@ -727,7 +747,16 @@
             </button>
           </li>
           <li class="tasks-item">
-            <input class="tasks-input" type="checkbox" name="task_status" />
+            <label class="tasks-checkbox">
+              <input
+                class="tasks-input visually-hidden"
+                type="checkbox"
+                name="task_status"
+                value="unfinished" />
+              <svg class="tasks-checkbox-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#icon-done"></use>
+              </svg>
+            </label>
             <div class="tasks-info">
               <h3 class="tasks-heading">Export the processed files</h3>
               <p class="tasks-desc">
@@ -741,7 +770,16 @@
             </button>
           </li>
           <li class="tasks-item">
-            <input class="tasks-input" type="checkbox" name="task_status" />
+            <label class="tasks-checkbox">
+              <input
+                class="tasks-input visually-hidden"
+                type="checkbox"
+                name="task_status"
+                value="unfinished" />
+              <svg class="tasks-checkbox-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#icon-done"></use>
+              </svg>
+            </label>
             <div class="tasks-info">
               <h3 class="tasks-heading">Release v2.0.0</h3>
               <p class="tasks-desc">Ra Ave SW, WA <time>11:19 AM</time></p>
@@ -753,7 +791,16 @@
             </button>
           </li>
           <li class="tasks-item">
-            <input class="tasks-input" type="checkbox" name="task_status" />
+            <label class="tasks-checkbox">
+              <input
+                class="tasks-input visually-hidden"
+                type="checkbox"
+                name="task_status"
+                value="unfinished" />
+              <svg class="tasks-checkbox-icon" width="20" height="20">
+                <use href="./src/img/icons.svg#icon-done"></use>
+              </svg>
+            </label>
             <div class="tasks-info">
               <h3 class="tasks-heading">Solve the issues</h3>
               <p class="tasks-desc">Capitol Hill, LA <time>12:34 AM</time></p>
@@ -905,7 +952,6 @@
         </ul>
       </section>
     </main>
-    <!-- </div> -->
 
     <script type="module" src="./src/js/main.js"></script>
   </body>

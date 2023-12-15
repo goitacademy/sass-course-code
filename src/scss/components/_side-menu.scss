@@ -3,13 +3,13 @@
 
   display: inline-flex;
   gap: 8px;
-  padding: 0 2px;
+  padding: 8px 2px;
 
   width: 100%;
   padding: 16px 0;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     left: -16px;
     bottom: 0;
@@ -22,13 +22,28 @@
 }
 
 .menu-nav {
-  padding: 30px 0;
+  max-width: 248px;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+
+  background-color: var(--Background-secondary-1, #1c1c24);
+
+  transform: translateX(-100%);
+  transition: 300ms ease-out 0ms;
+
+  .backdrop.is-open & {
+    transform: translateX(0);
+    transition: 300ms ease-out 300ms;
+  }
 }
+
 .menu-item {
   &:not(:last-child) {
     margin-bottom: 44px;
   }
 }
+
 .menu-link {
   position: relative;
 
@@ -47,7 +62,7 @@
     color: var(--Text-body, #fafafb);
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 50%;
       left: -16px;
@@ -74,6 +89,7 @@
     }
   }
 }
+
 .menu-icon {
   fill: currentColor;
 }

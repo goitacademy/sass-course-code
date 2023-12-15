@@ -1,9 +1,7 @@
-.backdrop {
-  @media screen and (min-width: 1200px) {
-    grid-area: sidebar;
-  }
+.menu {
+  position: relative;
 
-  @media screen and (max-width: 1199.98px) {
+  @media only screen and (max-width: 1199.98px) {
     position: fixed;
     top: 0;
     left: 0;
@@ -25,24 +23,10 @@
       visibility: visible;
     }
   }
-}
 
-.menu {
-  position: relative;
+  @media screen and (min-width: 1200px) {
+    grid-area: sidebar;
 
-  max-width: 248px;
-  width: 100%;
-  height: 100%;
-  padding: 0 16px;
-  background-color: var(--Background-secondary-1, #1c1c24);
-
-  @media only screen and (max-width: 1199.98px) {
-    transform: translateX(-100%);
-    transition: 300ms ease-out 0ms;
-
-    .backdrop.is-open & {
-      transform: translateX(0);
-      transition: 300ms ease-out 300ms;
-    }
+    padding: 0 20px;
   }
 }
