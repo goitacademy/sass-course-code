@@ -1,13 +1,14 @@
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.woff2") format('woff2');
-  font-weight: 400;
-	font-display: swap;
-}
+@use '../utils/variables' as var;
 
-@font-face {
-  font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Bold.woff2") format('woff2');
-  font-weight: 700;
-	font-display: swap;
+$fonts: var.$fonts-weight;
+
+@each $key, $value in $fonts {
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-#{$key}.woff2') format('woff2'),
+      url('../fonts/Montserrat-#{$key}.woff') format('woff');
+    font-weight: $value;
+    font-style: normal;
+    font-display: swap;
+  }
 }

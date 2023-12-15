@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 import glob from "fast-glob";
 import { fileURLToPath } from "url";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import purgecss from "@fullhuman/postcss-purgecss";
 
 export default defineConfig({
   plugins: [
@@ -26,6 +27,9 @@ export default defineConfig({
       }),
       apply: "serve",
     },
+    purgecss({
+      content: ["./**/*.html"],
+    }),
   ],
   build: {
     minify: false, // disable minification
@@ -34,7 +38,10 @@ export default defineConfig({
         glob
           .sync(["./*.html", "./pages/**/*.html"])
           .map((file) => [
-            path.relative(__dirname, file.slice(0, file.length - path.extname(file).length)),
+            path.relative(
+              __dirname,
+              file.slice(0, file.length - path.extname(file).length)
+            ),
             fileURLToPath(new URL(file, import.meta.url)),
           ])
       ),

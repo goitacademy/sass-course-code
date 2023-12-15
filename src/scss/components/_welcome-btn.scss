@@ -1,0 +1,21 @@
+.welcome-btn {
+  display: inline-flex;
+  padding: 8px 12px;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--Text-body, #fafafb);
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.5px;
+
+  border-radius: 12px;
+  background: var(--Text-primary, #f07f2e);
+
+  &-icon {
+    fill: currentColor;
+  }
+}

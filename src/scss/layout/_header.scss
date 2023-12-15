@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+
+  background: var(--Background-secondary-1, #1c1c24);
+  box-shadow: 0px 1px 0px 0px #292932 inset;
+
+  @media only screen and (min-width: 1440px) {
+    grid-column: 2 / 4;
+    padding: 24px 36px;
+    justify-content: space-between;
+  }
+}

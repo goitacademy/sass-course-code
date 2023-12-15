@@ -1,0 +1,44 @@
+%main-text {
+  color: var(--Text-body, #b5b5be);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+%accent-text {
+  color: var(--Text-body, #fafafb);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+%main-title {
+  color: var(--Text-body, #fafafb);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px; /* 140% */
+  letter-spacing: 0.5px;
+}
+
+%details {
+  color: var(--Text-body-2, #b5b5be);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.5px;
+}
+
+%details-accent {
+  color: var(--Text-body-2, #b5b5be);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.5px;
+}

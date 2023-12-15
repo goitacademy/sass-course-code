@@ -1,0 +1,49 @@
+.backdrop {
+  @media screen and (max-width: 1199.98px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--Background-primary, rgba(19, 19, 26, 0.5));
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    transition: 250ms ease-out;
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: initial;
+      visibility: visible;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+
+.menu {
+  position: relative;
+
+  max-width: 248px;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  background-color: var(--Background-secondary-1, #1c1c24);
+
+  @media only screen and (max-width: 1199.98px) {
+    transform: translateX(-100%);
+    transition: 300ms ease-out 0ms;
+
+    .backdrop.is-open & {
+      transform: translateX(0);
+      transition: 300ms ease-out 300ms;
+    }
+  }
+}
