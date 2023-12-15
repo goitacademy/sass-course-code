@@ -1,4 +1,8 @@
 .backdrop {
+  @media screen and (min-width: 1200px) {
+    grid-area: sidebar;
+  }
+
   @media screen and (max-width: 1199.98px) {
     position: fixed;
     top: 0;
@@ -20,11 +24,6 @@
       pointer-events: initial;
       visibility: visible;
     }
-  }
-
-  @media screen and (min-width: 1200px) {
-    grid-column-start: 1;
-    grid-column-end: 2;
   }
 }
 

@@ -1,13 +1,12 @@
 .tasks {
+  grid-area: tasks;
+
+  min-width: 340px;
   max-height: 420px;
 
   background-color: var(--Background-secondary-2, #292932);
   border-radius: 12px;
   overflow-y: auto;
-
-  @media only screen and (min-width: 1440px) {
-    grid-column: 2/3;
-  }
 }
 
 .tasks-title {

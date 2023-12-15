@@ -1,11 +1,11 @@
 .reports {
+  grid-area: reports;
+
+  min-width: 340px;
+
   background-color: var(--Background-secondary-2, #292932);
   border-radius: 12px;
   overflow-y: auto;
-
-  @media only screen and (min-width: 1440px) {
-    grid-column: 2/3;
-  }
 }
 
 .reports-title {
@@ -96,7 +96,7 @@
     border-radius: 2px;
   }
 
-  [data-status="up"] & {
+  [data-status='up'] & {
     &[value] {
       background-color: rgba($color: #00ff00, $alpha: 0.3);
     }
@@ -114,7 +114,7 @@
     }
   }
 
-  [data-status="dash"] & {
+  [data-status='dash'] & {
     &[value] {
       background-color: rgba($color: #a461d8, $alpha: 0.3);
     }
@@ -132,7 +132,7 @@
     }
   }
 
-  [data-status="down"] & {
+  [data-status='down'] & {
     &[value] {
       background-color: rgba($color: #fc5a5a, $alpha: 0.3);
     }
@@ -165,7 +165,7 @@
     fill: var(--Text-body, #fafafb);
   }
 
-  [data-status="up"] & {
+  [data-status='up'] & {
     background-color: var(--Text-success, #82c43c);
 
     .up {
@@ -173,7 +173,7 @@
     }
   }
 
-  [data-status="dash"] & {
+  [data-status='dash'] & {
     background-color: var(--Text-warning, #a461d8);
 
     .dash {
@@ -181,7 +181,7 @@
     }
   }
 
-  [data-status="down"] & {
+  [data-status='down'] & {
     background-color: var(--Text-danger, #fc5a5a);
 
     .down {

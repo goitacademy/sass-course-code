@@ -2,15 +2,32 @@
   display: grid;
   gap: 40px;
   padding: 16px;
+  grid-template-areas:
+    'welcome'
+    'co-workers'
+    'tasks'
+    'reports';
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
     gap: 36px;
+    padding: 36px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-template-areas:
+      'welcome welcome'
+      'co-workers co-workers'
+      'tasks reports';
   }
 
-  @media only screen and (min-width: 1440px) {
-    grid-template-columns: 629px 455px;
+  @media only screen and (min-width: 1024px) {
+    grid-area: main;
 
-    padding: 36px;
+    grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
+
+    grid-template-areas:
+      'welcome welcome'
+      'co-workers tasks'
+      'co-workers reports';
   }
 }
