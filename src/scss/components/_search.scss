@@ -1,16 +1,20 @@
+@use '../utils/placeholders';
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
 .search-field {
   display: inline-flex;
   align-items: center;
 
-  color: var(--Text-default, #92929d);
+  color: fn.get-color('light-tertiary');
   overflow: hidden;
   transition: width 400ms ease, color 400ms ease;
 
   &:focus-within {
-    color: var(--Text-body, #fafafb);
+    color: fn.get-color('light-primary');
   }
 
-  @media only screen and (max-width: 1199.98px) {
+  @include mx.mq('lg', 'max') {
     width: 30px;
 
     &:focus-within {
@@ -18,7 +22,7 @@
     }
   }
 
-  @media only screen and (min-width: 1200px) {
+  @include mx.mq('lg') {
     margin-right: auto;
   }
 }
@@ -31,16 +35,12 @@
 }
 
 .search-input {
+  @extend %details;
+
   min-width: 165px;
   min-height: 20px;
 
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.5px;
-
-  @media only screen and (max-width: 1199.98px) {
+  @include mx.mq('lg', 'max') {
     opacity: 0;
     transition: opacity 300ms ease-in;
     transition-delay: 0ms;

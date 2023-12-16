@@ -1,3 +1,11 @@
+$breakpoints: (
+  'sm': 375px,
+  'md': 768px,
+  'lg': 1200px,
+  'xl': 1440px,
+  'xxl': 1920px,
+);
+
 $colors: (
   'light': #fff,
   'light-primary': #fafafb,
@@ -7,7 +15,7 @@ $colors: (
   'dark-primary': #13131a,
   'dark-secondary': #1c1c24,
   'dark-tertiary': #292932,
-  'accent-rimary': #f07f2e,
+  'accent-primary': #f07f2e,
   'accent-secondary': #d14a00,
   'accent-tertiary': #d14a00,
   'danger': #fc5a5a,
@@ -34,7 +42,7 @@ $spacers: (
 
 $main-font: 'Montserrat';
 
-$fonts-weight: (
+$font-weights: (
   'Regular': 400,
   'Medium': 500,
   'Semibold': 600,
@@ -46,4 +54,9 @@ $font-sizes: (
   'md': 16px,
   'lg': 20px,
   'xl': 24px,
+);
+
+$easings: (
+  'fast': 300ms ease,
+  'slow': 600ms ease,
 );

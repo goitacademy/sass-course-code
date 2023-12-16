@@ -1,43 +1,38 @@
+@use '../utils/placeholders';
+@use '../utils/mixins' as mx;
+@use '../utils/functions' as fn;
+
 .tasks {
+  @extend %section-frame;
   grid-area: tasks;
 
   min-width: 340px;
   max-height: 420px;
 
   background-color: var(--Background-secondary-2, #292932);
-  border-radius: 12px;
-  overflow-y: auto;
 }
 
 .tasks-title {
-  position: sticky;
-  top: -1px;
+  @extend %details;
 
-  padding: 24px;
-  padding-bottom: 36px;
-
+  margin-bottom: 36px;
   color: var(--Text-body-2, #b5b5be);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.5px;
-
-  background-color: var(--Background-secondary-2, #292932);
 
   span {
+    @extend %accent-text;
     color: var(--Text-body, #fafafb);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px; /* 150% */
-    letter-spacing: 0.5px;
   }
 }
 
 .tasks-list {
-  padding: 24px;
-  padding-top: 0;
+  @include mx.scroll-bar;
+
+  max-height: 288px;
+  overflow: auto;
+
+  @include mx.mq('lg') {
+    margin-right: -14px;
+  }
 }
 
 .tasks-item {
@@ -45,7 +40,7 @@
   align-items: center;
   gap: 16px;
 
-  padding: 16px 0;
+  padding: 16px 8px;
   border-top: 1px solid var(--Text-default, #92929d);
 }
 
@@ -72,7 +67,7 @@
     border-color: transparent;
   }
 
-  .tasks-input:focus + & {
+  .tasks-input:focus-visible + & {
     outline: 2px solid var(--Text-default, #92929d);
     outline-offset: 2px;
   }
@@ -83,21 +78,15 @@
 }
 
 .tasks-heading {
+  @extend %details;
+
   color: var(--Text-body, #fafafb);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.5px;
 }
 
 .tasks-desc {
+  @extend %details;
+
   color: var(--Text-body-2, #b5b5be);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.5px;
 }
 
 .tasks-btn {
@@ -106,12 +95,12 @@
   color: var(--Text-default, #92929d);
   border-radius: 50%;
 
-  &:focus {
+  &:focus-visible {
     outline: 2px solid var(--Text-default, rgba(146, 146, 157, 0.6));
     outline-offset: 3px;
   }
 
   &-icon {
-    fill: currentColor;
+    fill: fn.get-color('current');
   }
 }

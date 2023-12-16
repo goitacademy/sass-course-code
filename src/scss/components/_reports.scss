@@ -1,44 +1,29 @@
+@use '../utils/placeholders';
+@use '../utils/mixins' as mx;
+
 .reports {
+  @extend %section-frame;
+
   grid-area: reports;
 
   min-width: 340px;
 
   background-color: var(--Background-secondary-2, #292932);
-  border-radius: 12px;
-  overflow-y: auto;
 }
 
 .reports-title {
-  position: sticky;
-  top: -1px;
+  @extend %details;
 
-  padding: 24px;
-
+  margin-bottom: 36px;
   color: var(--Text-body-2, #b5b5be);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.5px;
-
-  background-color: var(--Background-secondary-2, #292932);
 
   span {
+    @extend %accent-text;
     color: var(--Text-body, #fafafb);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px; /* 150% */
-    letter-spacing: 0.5px;
   }
 }
 
 .reports-list {
-  padding: 16px;
-
-  @media only screen and (min-width: 768px) {
-    padding: 24px;
-  }
 }
 
 .reports-item {
@@ -55,37 +40,25 @@
   }
 }
 
-.reports-co-worker {
+.reports-staff {
   flex-grow: 1;
   flex-shrink: 0;
 }
 
-.co-worker {
+.staff {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.co-worker-thumb {
-  width: 32px;
-  height: 32px;
-
-  border-radius: 50%;
-  overflow: hidden;
+.staff-thumb {
+  @include mx.frame(32px, $is-circle: true);
 }
 
-.co-worker-avatar {
-  object-fit: cover;
-  object-position: center;
-}
+.staff-caption {
+  @extend %details;
 
-.co-worker-caption {
   color: var(--Text-body-2, #b5b5be);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.5px;
 }
 
 .reports-bar {

@@ -1,15 +1,17 @@
 @use '../utils/placeholders';
 @use '../utils/variables' as var;
+@use '../utils/functions' as fn;
 
 body {
   @extend %main-text;
 
   font-family: var.$main-font, sans-serif;
-  background-color: #13131a;
+  color: fn.get-color('light-secondary');
+  background-color: fn.get-color('dark-primary');
 }
 
 button {
-  color: currentColor;
+  color: fn.get-color('current');
   cursor: pointer !important;
 }
 

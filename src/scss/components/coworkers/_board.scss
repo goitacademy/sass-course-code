@@ -1,0 +1,57 @@
+@use '../../utils/placeholders';
+@use '../../utils/mixins' as mx;
+@use '../../utils/functions' as fn;
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.board-item {
+  @extend %section-frame;
+
+  flex-grow: 1;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 43px;
+
+  background-color: var(--Background-secondary-1, #1c1c24);
+
+  &.hide {
+    display: none;
+  }
+}
+
+.board-caption {
+  @extend %accent-text;
+
+  margin-bottom: 8px;
+  color: var(--Text-body, #fafafb);
+}
+
+.board-details {
+  @extend %details;
+
+  margin-bottom: 20px;
+  color: var(--Text-body, #fafafb);
+
+  time {
+    color: var(--Text-body-2, #b5b5be);
+  }
+}
+
+.board-right {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.board-tag {
+  @extend %details;
+
+  margin-bottom: auto;
+  text-align: right;
+  color: var(--Text-body-2, #b5b5be);
+}

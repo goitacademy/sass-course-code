@@ -1,29 +1,21 @@
-@use "../base/fonts";
+.badge {
+  min-width: 96px;
+  padding: 4px 8px;
 
-.badges {
-  display: flex;
-  flex-flow: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
+  color: var(--secondary-white, #fff);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.07px;
+  text-align: center;
 
-  &-item {
+  border-radius: 20px;
+
+  &.warning {
+    background-color: var(--Text-warning, #a461d8);
   }
-
-  &-link {
-    display: block;
-    border-radius: 5rem;
-    color: var(--main-text-color);
-    text-decoration: none;
-    background: var(--brand-color);
-    padding: 0.8rem 1.8rem;
-    transition: 0.2s ease;
-
-    &:hover {
-      background: var(--brand-light-color);
-    }
+  &.error {
+    background-color: var(--Text-danger, #fc5a5a);
   }
-}
-.no-link {
-  pointer-events: none;
 }

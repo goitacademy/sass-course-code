@@ -1,5 +1,6 @@
+@use '../utils/mixins' as mx;
 .sidebar {
-  @media only screen and (max-width: 1199.98px) {
+  @include mx.mq('lg', 'max') {
     position: fixed;
     top: 0;
     left: 0;
@@ -20,13 +21,11 @@
       pointer-events: initial;
       visibility: visible;
     }
-
-    @media only screen and (min-width: 1200px) {
-      max-width: 248px;
-    }
   }
 
-  @media screen and (min-width: 1200px) {
+  @include mx.mq('lg') {
     grid-area: sidebar;
+
+    max-width: 248px;
   }
 }

@@ -1,11 +1,14 @@
+@use '../utils/placeholders';
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
 .menu {
   position: relative;
   width: 100%;
   height: 100%;
 
-  background-color: var(--Background-secondary-1, #1c1c24);
-
-  @media only screen and (max-width: 1199.98px) {
+  background-color: fn.get-color('dark-secondary');
+  @include mx.mq('lg', 'max') {
     max-width: 248px;
 
     transform: translateX(-100%);
@@ -19,10 +22,14 @@
 }
 
 .menu-list {
-  border-top: 1px solid var(--Background-secondary-2, #292932);
+  border-top: 1px solid;
+  border-color: fn.get-color('dark-tertiary');
 }
 
 .menu-link {
+  @extend %details;
+  @include mx.ease('fast', color);
+
   position: relative;
 
   display: flex;
@@ -30,15 +37,13 @@
   gap: 24px;
   padding: 16px 20px;
 
-  color: var(--Text-body-2, #b5b5be);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.5px;
+  &:hover,
+  &:focus {
+    color: fn.get-color('light-primary');
+  }
 
   &.current {
-    color: var(--Text-body, #fafafb);
+    color: fn.get-color('light-primary');
 
     &::before {
       content: '';
@@ -52,25 +57,13 @@
       height: 32px;
 
       border-radius: 0px 100px 100px 0px;
-      background: var(--Text-body, #fafafb);
-    }
-  }
-
-  @media not (hover: hover) {
-    &:active {
-      color: var(--Text-body, #fafafb);
-    }
-  }
-  @media (hover: hover) {
-    &:hover,
-    &:focus {
-      color: var(--Text-body, #fafafb);
+      background-color: fn.get-color('light-primary');
     }
   }
 }
 
 .menu-icon {
-  fill: currentColor;
+  fill: fn.get-color('current');
 }
 
 .menu-notification {

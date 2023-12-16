@@ -1,4 +1,6 @@
+@use '../utils/variables' as var;
 @use '../utils/placeholders';
+@use '../utils/mixins' as mx;
 
 .welcome {
   grid-area: welcome;
@@ -10,16 +12,15 @@
   row-gap: 16px;
 }
 
-.page-title {
-}
+.welcome-title {
+  &-accent {
+    @extend %main-title;
 
-.page-title-accent {
-  @extend %main-title;
+    display: block;
+    margin-bottom: 8px;
 
-  display: block;
-  margin-bottom: 8px;
-
-  @media only screen and (min-width: 1440px) {
-    margin-bottom: 16px;
+    @include mx.mq('xl') {
+      margin-bottom: 16px;
+    }
   }
 }
