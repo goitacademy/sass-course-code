@@ -1,4 +1,4 @@
-.main-content {
+.main {
   display: grid;
   gap: 40px;
   padding: 16px;
@@ -13,7 +13,6 @@
     padding: 36px;
 
     grid-template-columns: repeat(2, 1fr);
-
     grid-template-areas:
       'welcome welcome'
       'co-workers co-workers'
@@ -21,10 +20,11 @@
   }
 
   @media only screen and (min-width: 1024px) {
+    // Position in page layuot
     grid-area: main;
 
+    // Inside grid system
     grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
-
     grid-template-areas:
       'welcome welcome'
       'co-workers tasks'

@@ -7,14 +7,17 @@
     <title>Final Project</title>
   </head>
   <body class="page">
-    <!-- <div class=" " > -->
-    <aside class="menu backdrop js-menu" id="sidebar-menu">
-      <button class="menu-btn js-menu-close" type="button">
-        <svg class="menu-btn-icon" width="20" height="20">
-          <use href="./src/img/icons.svg#icon-x-close"></use>
-        </svg>
-      </button>
-      <nav class="menu-nav">
+    <aside class="sidebar js-menu" id="sidebar-menu">
+      <nav class="menu">
+        <button
+          class="menu-btn js-menu-close"
+          type="button"
+          aria-label="Close menu">
+          <svg class="menu-btn-icon" width="20" height="20">
+            <use href="./src/img/icons.svg#icon-x-close"></use>
+          </svg>
+        </button>
+
         <a class="logo" href="./index.html">
           <svg class="logo-icon" width="24" height="24">
             <use href="./src/img/icons.svg#icon-logo"></use>
@@ -91,7 +94,6 @@
         </ul>
       </nav>
     </aside>
-    <!-- </div> -->
 
     <header class="header">
       <button
@@ -126,7 +128,7 @@
       </button>
     </header>
 
-    <main class="main-content">
+    <main class="main">
       <section class="welcome">
         <h1 class="page-title">
           <span class="page-title-accent">Hi Yaroslav,</span>

@@ -12,17 +12,26 @@
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.5px;
 
+  @media only screen and (min-width: 1200px) {
+    display: none;
+  }
+
   &-icon {
     fill: currentColor;
   }
 
-  @media only screen and (min-width: 1440px) {
-    display: none;
-  }
-
-  .menu & {
+  .sidebar & {
     position: absolute;
     top: 16px;
-    left: 264px;
+    right: -36px;
+
+    opacity: 0;
+    transform: rotate(180deg);
+    transition: opacity 500ms ease-out 800ms, transform 300ms ease-out 600ms;
+  }
+
+  .sidebar.is-open & {
+    opacity: 1;
+    transform: rotate(0deg);
   }
 }

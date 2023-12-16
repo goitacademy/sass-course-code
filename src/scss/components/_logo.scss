@@ -1,0 +1,17 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px; /* 166.667% */
+  letter-spacing: 0.5px;
+  color: var(--ORANGE, #f07f2e);
+
+  @media only screen and (min-width: 1200px) {
+    padding: 16px 20px;
+  }
+}

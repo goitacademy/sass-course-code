@@ -1,0 +1,12 @@
+.notification {
+  display: block;
+  min-width: 28px;
+  height: 20px;
+  padding: 0 10px;
+
+  flex-shrink: 0;
+  color: var(--Text-body, #fafafb);
+
+  border-radius: 12px;
+  background-color: var(--Text-danger, #fc5a5a);
+}

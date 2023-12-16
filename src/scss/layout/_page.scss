@@ -1,6 +1,5 @@
 .page {
   min-width: 375px;
-  perspective: 500px;
 
   @media only screen and (min-width: 1200px) {
     display: grid;
@@ -11,22 +10,3 @@
       'sidebar main';
   }
 }
-
-// .wrapper {
-//   grid-column-start: 1;
-//   transition: 300ms ease-in-out;
-//   transition-delay: 300ms;
-
-//   @media screen and (min-width: 1200px) {
-//     grid-column-start: 2;
-//   }
-
-//   .backdrop.is-open + & {
-//     transform: translate3d(200px, -920px, -500px) rotateY(-6deg);
-//     transition-delay: 0ms;
-
-//     @media only screen and (min-width: 768px) {
-//       transform: translate3d(270px, -650px, -500px) rotateY(-8deg);
-//     }
-//   }
-// }
