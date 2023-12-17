@@ -1,0 +1,38 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+.main {
+  display: grid;
+  gap: 40px;
+  padding: 16px;
+  grid-template-areas:
+    'welcome'
+    'co-workers'
+    'tasks'
+    'reports';
+
+  @include mx.mq('md') {
+    gap: 36px;
+    padding: 36px;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'welcome welcome'
+      'co-workers co-workers'
+      'tasks reports';
+  }
+
+  @include mx.mq('lg') {
+    // Position in page layout
+    grid-area: main;
+
+    // Inside grid system
+    grid-template-columns: repeat(auto-fit, minmax(455px, 629px));
+    grid-template-areas:
+      'welcome welcome'
+      'co-workers tasks'
+      'co-workers reports';
+  }
+}

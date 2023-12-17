@@ -1,0 +1,84 @@
+@use 'sass:map';
+@use 'sass:list';
+
+@use 'variables' as var;
+@use 'functions' as fn;
+
+@mixin mq($bp: sm, $type: min, $is-retina: false) {
+  @if map.has-key(var.$breakpoints, $bp) {
+    $width: map.get(var.$breakpoints, $bp);
+
+    @if $type == max {
+      $width: $width - 0.02px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @if $is-retina {
+        @media (min-device-pixel-ratio: 2),
+          (min-resolution: 192dpi),
+          (min-resolution: 2dppx) {
+          @content;
+        }
+      } @else {
+        @content;
+      }
+    }
+  } @else {
+    @error "";
+  }
+}
+
+@mixin frame($width, $height: $width, $is-circle: false) {
+  width: $width;
+  height: $height;
+
+  @if $is-circle {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+@mixin scroll-bar {
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 100px;
+
+    &:hover {
+      background-color: rgba(#fff, 0, 3);
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: fn.get-color('light-secondary');
+    background-clip: content-box;
+    border: 5px solid transparent;
+    border-radius: 100px;
+
+    &:hover {
+      background-color: fn.get-color('accent-primary');
+    }
+  }
+}
+
+@mixin ease($ease, $properties...) {
+  @if map.has-key(var.$easings, $ease) {
+    $ease: map.get(var.$easings, $ease);
+
+    transition: $ease;
+  } @else {
+    @warn "The variable $ease is not defined";
+  }
+
+  @if list.length($properties) > 0 {
+    transition-property: $properties;
+  }
+}

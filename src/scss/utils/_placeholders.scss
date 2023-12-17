@@ -1,0 +1,52 @@
+@use 'mixins' as mx;
+
+%main-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.66;
+  letter-spacing: 0.02em;
+}
+
+%section-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.025em;
+}
+
+%main-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+%accent-text {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+%details {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.04em;
+}
+
+%details-accent {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.42;
+  letter-spacing: 0.04em;
+}
+
+%section-frame {
+  padding: 16px;
+  border-radius: 12px;
+
+  @include mx.mq('lg') {
+    padding: 24px;
+  }
+}
