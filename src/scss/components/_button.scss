@@ -1,25 +1,12 @@
 @use "../utils/placeholders";
+@use "../utils/variables" as var;
 @use "../utils/mixins" as mx;
 @use "../utils/functions" as fn;
-
-$btn-types: (
-  "default": "",
-  "danger": "",
-  "warning": "",
-  "success": "",
-  "info": "",
-  "transparent": "",
-  "framed": "",
-);
 
 %btn {
   @extend %details.accent;
   @include mx.ease("fast", background-color, box-shadow);
 
-  // font-size: 14px;
-  // font-weight: 500;
-  // line-height: 20px; /* 142.857% */
-  // letter-spacing: 0.5px;
   color: fn.get-color("light-primary");
 
   background-color: fn.get-color("accent-primary");
@@ -30,23 +17,4 @@ $btn-types: (
     background-color: fn.get-color("accent-secondary");
     box-shadow: 0px 4px 10px 0px rgba(fn.get-color("accent-primary"), 0.25);
   }
-}
-
-.btn-sm {
-  @extend %btn;
-
-  display: inline-flex;
-  padding: 4px 8px;
-}
-.btn-md {
-  @extend %btn;
-
-  display: inline-flex;
-  padding: 8px 12px;
-}
-.btn-lg {
-  @extend %btn;
-
-  display: inline-flex;
-  padding: 16px 20px;
 }

@@ -76,15 +76,6 @@
 }
 
 .show-more-btn {
-  @include mx.ease("fast", background-color);
-
   display: block;
   margin: 0 auto;
-  padding: 8px 12px;
-  border-radius: 12px;
-
-  &:hover,
-  &:focus {
-    background-color: rgba(fn.get-color("light-secondary"), 0.5);
-  }
 }

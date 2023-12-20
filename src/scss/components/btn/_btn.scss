@@ -1,0 +1,47 @@
+// |==========
+// | Settings
+// |==========
+$btn-padding-x: 12px !default;
+$btn-padding-y: 8px !default;
+$btn-layer-min-width: 32px !default;
+$btn-layer-min-height: 32px !default;
+$btn-layer-spacing: 0px !default;
+$btn-layer-border-radius: 12px !default;
+
+$btn-text-size: 14px !default;
+$btn-text-weight: 500 !default;
+$btn-line-height: 20px !default;
+$btn-text-spacing: 0.5px !default;
+$btn-text-color: #fafafb !default;
+
+// |==================================================
+// | Types (Remove or comment out what you don’t need)
+// |==================================================
+$btn-types: (
+  primary,
+  secondary,
+  default,
+  danger,
+  warning,
+  success,
+  info,
+  transparent,
+  frame
+);
+
+// |====================
+// | Button base styles
+// |====================
+@import "btn-base";
+
+// |==============
+// | Button types
+// |==============
+@import "./types/primary";
+@import "./types/secondary";
+@import "./types/default";
+@import "./types/danger";
+@import "./types/warning";
+@import "./types/success";
+@import "./types/info";
+@import "./types/frame";

@@ -1,6 +1,8 @@
-@use '../utils/variables' as var;
-@use '../utils/placeholders';
-@use '../utils/mixins' as mx;
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "btn/btn" as btn with (
+  $btn-layer-spacing: 4px
+);
 
 .welcome {
   grid-area: welcome;
@@ -14,12 +16,12 @@
 
 .welcome-title {
   &-accent {
-    @extend %main-title;
+    @extend %section-title;
 
     display: block;
     margin-bottom: 8px;
 
-    @include mx.mq('xl') {
+    @include mx.mq("xl") {
       margin-bottom: 16px;
     }
   }
