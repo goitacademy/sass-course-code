@@ -1,6 +1,11 @@
-@use '../utils/mixins' as mx;
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
+
 .sidebar {
-  @include mx.mq('lg', 'max') {
+  @include mx.mq("lg", "max") {
+    @include mx.ease("fast", opacity, visibility);
+
     position: fixed;
     top: 0;
     left: 0;
@@ -9,12 +14,10 @@
     width: 100%;
     height: 100%;
 
-    background-color: var(--Background-primary, rgba(19, 19, 26, 0.5));
+    background-color: rgba(fn.get-color("dark-primary"), 0.5);
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
-
-    transition: 250ms ease-out;
 
     &.is-open {
       opacity: 1;
@@ -23,7 +26,7 @@
     }
   }
 
-  @include mx.mq('lg') {
+  @include mx.mq("lg") {
     grid-area: sidebar;
 
     max-width: 248px;

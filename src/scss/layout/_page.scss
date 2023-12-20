@@ -1,12 +1,16 @@
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
+
 .page {
   min-width: 375px;
 
-  @media only screen and (min-width: 1200px) {
+  @include mx.mq("lg") {
     display: grid;
     grid-template-columns: 248px 1fr;
     grid-template-rows: 68px 1fr;
     grid-template-areas:
-      'sidebar header'
-      'sidebar main';
+      "sidebar header"
+      "sidebar main";
   }
 }

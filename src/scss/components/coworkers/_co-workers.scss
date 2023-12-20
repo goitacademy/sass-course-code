@@ -1,13 +1,13 @@
-@use '../../utils/placeholders';
-@use '../../utils/mixins' as mx;
-@use '../../utils/functions' as fn;
+@use "../../utils/placeholders";
+@use "../../utils/mixins" as mx;
+@use "../../utils/functions" as fn;
 
 .co-workers {
   grid-area: co-workers;
 
-  @media only screen and (min-width: 1440px) {
+  @include mx.mq("xl") {
     padding: 20px;
-    background-color: var(--Background-secondary-2, #292932);
+    background-color: fn.get-color("dark-tertiary");
     border-radius: 12px;
   }
 }
@@ -18,13 +18,13 @@
   margin-bottom: 40px;
 
   border-radius: 12px;
-  background-color: var(--Background-secondary-2, #292932);
-  background-color: var(--Background-secondary-1, #1c1c24);
+  background-color: fn.get-color("dark-tertiary");
 
-  @media only screen and (min-width: 1440px) {
+  @include mx.mq("xl") {
     max-height: 400px;
     padding: 24px;
     margin-bottom: 32px;
+    background-color: fn.get-color("dark-secondary");
   }
 }
 
@@ -33,7 +33,7 @@
 
   margin-bottom: 28px;
 
-  @media only screen and (min-width: 1440px) {
+  @include mx.mq("xl") {
     margin-bottom: 36px;
   }
 
@@ -49,7 +49,7 @@
 
   overflow-y: auto;
 
-  @include mx.mq('lg') {
+  @include mx.mq("lg") {
     margin-right: -14px;
   }
 }
@@ -72,16 +72,11 @@
 }
 
 .person-caption {
-  color: var(--Text-body-2, #b5b5be);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.5px;
+  @extend %details;
 }
 
 .show-more-btn {
-  @include mx.ease('fast', background-color);
+  @include mx.ease("fast", background-color);
 
   display: block;
   margin: 0 auto;
@@ -90,6 +85,6 @@
 
   &:hover,
   &:focus {
-    background-color: rgba(181, 181, 190, 0.5);
+    background-color: rgba(fn.get-color("light-secondary"), 0.5);
   }
 }

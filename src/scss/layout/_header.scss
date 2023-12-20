@@ -1,3 +1,7 @@
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
+
 .header {
   grid-area: header;
 
@@ -5,10 +9,10 @@
   align-items: center;
   padding: 16px;
 
-  background-color: var(--Background-secondary-1, #1c1c24);
-  box-shadow: 0px 1px 0px 0px #292932 inset;
+  background-color: fn.get-color("dark-secondary");
+  box-shadow: inset 0px 1px 0px 0px fn.get-color("dark-tertiary");
 
-  @media only screen and (min-width: 1440px) {
+  @include mx.mq("lg") {
     padding: 24px 36px;
     justify-content: space-between;
   }

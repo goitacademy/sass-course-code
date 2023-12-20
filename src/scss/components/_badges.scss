@@ -1,21 +1,17 @@
-.badge {
-  min-width: 96px;
-  padding: 4px 8px;
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
 
-  color: var(--secondary-white, #fff);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px; /* 142.857% */
-  letter-spacing: 0.07px;
-  text-align: center;
+@each $value in "danger", "warning", "sucess" {
+  .badge-#{$value} {
+    @extend %details-accent;
 
-  border-radius: 20px;
+    min-width: 96px;
+    padding: 4px 8px;
 
-  &.warning {
-    background-color: var(--Text-warning, #a461d8);
-  }
-  &.error {
-    background-color: var(--Text-danger, #fc5a5a);
+    text-align: center;
+    color: fn.get-color("light");
+    border-radius: 20px;
+    background-color: fn.get-color($value);
   }
 }

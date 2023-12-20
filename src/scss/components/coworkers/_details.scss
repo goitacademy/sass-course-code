@@ -1,23 +1,23 @@
-@use '../../utils/placeholders';
-@use '../../utils/mixins' as mx;
-@use '../../utils/functions' as fn;
+@use "../../utils/placeholders";
+@use "../../utils/mixins" as mx;
+@use "../../utils/functions" as fn;
 
 .co-workers-details {
   @extend %details;
 
   padding: 16px 0;
 
-  @media only screen and (min-width: 768px) {
+  @include mx.mq("md") {
     display: none;
   }
 }
 
 .co-workers-data {
+  @include mx.ease("slow", margin);
+
   display: flex;
   align-items: center;
   gap: 12px;
-
-  transition: margin 300ms ease-out;
 
   .co-workers-details[open] & {
     margin-bottom: 16px;
@@ -34,14 +34,15 @@
   height: 20px;
 
   border-radius: 4px;
-  border: 1px solid var(--Text-default, #92929d);
+  border: 1px solid fn.get-color("light-tertiary");
   cursor: pointer;
 
   .plus {
-    transition: 150ms ease-in;
+    @include mx.ease("fast", opacity);
     transition-delay: 150ms;
+
     opacity: 0;
-    fill: var(--Text-default, #92929d);
+    fill: fn.get-color("light-tertiary");
 
     .co-workers-details:not([open]) & {
       opacity: 1;
@@ -49,9 +50,10 @@
   }
 
   .minus {
-    transition: 150ms ease-in;
+    @include mx.ease("fast", opacity);
+
     opacity: 0;
-    fill: var(--Text-default, #92929d);
+    fill: fn.get-color("light-tertiary");
 
     .co-workers-details[open] & {
       opacity: 1;
@@ -68,15 +70,7 @@
   gap: 8px;
 
   .thumb {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    overflow: hidden;
-
-    img {
-      object-fit: cover;
-      object-position: top center;
-    }
+    @include mx.frame(24px, $is-circle: true);
   }
 }
 
@@ -96,11 +90,11 @@
 
   &-icon {
     &.success {
-      fill: var(--Text-success, #82c43c);
+      fill: fn.get-color("success");
     }
 
     &.error {
-      fill: var(--Text-danger, #fc5a5a);
+      fill: fn.get-color("danger");
     }
   }
 }
@@ -115,7 +109,7 @@
 }
 
 .co-workers-position {
-  color: var(--Text-body, #fafafb);
+  color: fn.get-color("light-primary");
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -124,7 +118,7 @@
 }
 
 .co-workers-accept {
-  color: var(--Text-body, #fafafb);
+  color: fn.get-color("light-primary");
   font-size: 14px;
   font-style: normal;
   font-weight: 500;

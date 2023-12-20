@@ -1,6 +1,6 @@
-@use '../utils/placeholders';
-@use '../utils/mixins' as mx;
-@use '../utils/functions' as fn;
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
 
 .tasks {
   @extend %section-frame;
@@ -9,18 +9,18 @@
   min-width: 340px;
   max-height: 420px;
 
-  background-color: var(--Background-secondary-2, #292932);
+  background-color: fn.get-color("dark-tertiary");
 }
 
 .tasks-title {
   @extend %details;
 
   margin-bottom: 36px;
-  color: var(--Text-body-2, #b5b5be);
+  color: fn.get-color("light-secondary");
 
   span {
     @extend %accent-text;
-    color: var(--Text-body, #fafafb);
+    color: fn.get-color("light-primary");
   }
 }
 
@@ -30,7 +30,7 @@
   max-height: 288px;
   overflow: auto;
 
-  @include mx.mq('lg') {
+  @include mx.mq("lg") {
     margin-right: -14px;
   }
 }
@@ -41,7 +41,7 @@
   gap: 16px;
 
   padding: 16px 8px;
-  border-top: 1px solid var(--Text-default, #92929d);
+  border-top: 1px solid fn.get-color("light-tertiary");
 }
 
 .tasks-checkbox {
@@ -56,19 +56,20 @@
 }
 
 .tasks-checkbox-icon {
+  @include mx.ease("fast", fill, background-color, border-color);
+
   fill: transparent;
+  border: 1px solid fn.get-color("light-tertiary");
   border-radius: 4px;
-  border: 1px solid var(--Text-default, #92929d);
-  transition: 300ms ease;
 
   .tasks-input:checked + & {
-    fill: var(--Text-body, #fafafb);
-    background-color: var(--Text-primary, #f07f2e);
-    border-color: transparent;
+    fill: fn.get-color("light-primary");
+    background-color: fn.get-color("accent-primary");
+    border-color: fn.get-color("transparent");
   }
 
   .tasks-input:focus-visible + & {
-    outline: 2px solid var(--Text-default, #92929d);
+    outline: 2px solid fn.get-color("light-tertiary");
     outline-offset: 2px;
   }
 }
@@ -80,27 +81,29 @@
 .tasks-heading {
   @extend %details;
 
-  color: var(--Text-body, #fafafb);
+  color: fn.get-color("light-primary");
 }
 
 .tasks-desc {
   @extend %details;
 
-  color: var(--Text-body-2, #b5b5be);
+  color: fn.get-color("light-secondary");
 }
 
 .tasks-btn {
+  @include mx.ease("fast", outline);
+
   width: 20px;
   height: 20px;
-  color: var(--Text-default, #92929d);
+  color: fn.get-color("light-tertiary");
   border-radius: 50%;
 
   &:focus-visible {
-    outline: 2px solid var(--Text-default, rgba(146, 146, 157, 0.6));
+    outline: 2px solid rgba(fn.get-color("light-tertiary"), 0.6);
     outline-offset: 3px;
   }
 
   &-icon {
-    fill: fn.get-color('current');
+    fill: fn.get-color("current");
   }
 }

@@ -1,12 +1,16 @@
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
+
 .notification {
+  flex-shrink: 0;
+
   display: block;
   min-width: 28px;
   height: 20px;
   padding: 0 10px;
 
-  flex-shrink: 0;
-  color: var(--Text-body, #fafafb);
-
+  color: fn.get-color("light-primary");
   border-radius: 12px;
-  background-color: var(--Text-danger, #fc5a5a);
+  background-color: fn.get-color("danger");
 }

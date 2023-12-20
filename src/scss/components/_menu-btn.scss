@@ -1,3 +1,7 @@
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
+
 .menu-btn {
   display: inline-flex;
   align-items: center;
@@ -5,29 +9,31 @@
 
   margin-right: auto;
 
-  color: var(--Text-body, #fafafb);
+  color: fn.get-color("light-primary");
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.5px;
 
-  @media only screen and (min-width: 1200px) {
+  @include mx.mq("lg") {
     display: none;
   }
 
   &-icon {
-    fill: currentColor;
+    fill: fn.get-color("current");
   }
 
   .sidebar & {
+    @include mx.ease("slow", opacity, transform);
+    transition-delay: 800ms, 600ms;
+
     position: absolute;
     top: 16px;
     right: -36px;
 
     opacity: 0;
     transform: rotate(180deg);
-    transition: opacity 500ms ease-out 800ms, transform 300ms ease-out 600ms;
   }
 
   .sidebar.is-open & {

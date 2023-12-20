@@ -1,5 +1,12 @@
-@use '../utils/placeholders';
-@use '../utils/mixins' as mx;
+@use "../utils/placeholders";
+@use "../utils/mixins" as mx;
+@use "../utils/functions" as fn;
+
+$reports-status: (
+  "success": "up",
+  "warning": "dash",
+  "danger": "down",
+);
 
 .reports {
   @extend %section-frame;
@@ -7,23 +14,19 @@
   grid-area: reports;
 
   min-width: 340px;
-
-  background-color: var(--Background-secondary-2, #292932);
+  background-color: fn.get-color("dark-tertiary");
 }
 
 .reports-title {
   @extend %details;
 
   margin-bottom: 36px;
-  color: var(--Text-body-2, #b5b5be);
+  color: fn.get-color("light-secondary");
 
   span {
     @extend %accent-text;
-    color: var(--Text-body, #fafafb);
+    color: fn.get-color("light-primary");
   }
-}
-
-.reports-list {
 }
 
 .reports-item {
@@ -31,7 +34,7 @@
   align-items: center;
   gap: 30px;
 
-  @media only screen and (min-width: 768px) {
+  @include mx.mq("md") {
     gap: 32px;
   }
 
@@ -58,7 +61,7 @@
 .staff-caption {
   @extend %details;
 
-  color: var(--Text-body-2, #b5b5be);
+  color: fn.get-color("light-secondary");
 }
 
 .reports-bar {
@@ -69,62 +72,28 @@
     border-radius: 2px;
   }
 
-  [data-status='up'] & {
-    &[value] {
-      background-color: rgba($color: #00ff00, $alpha: 0.3);
-    }
-    &::-moz-progress-bar {
-      background-color: rgba($color: #00ff00, $alpha: 1);
-    }
+  @each $key, $value in $reports-status {
+    [data-status="#{$value}"] & {
+      &[value] {
+        background-color: rgba(fn.get-color($key), 0.3);
+      }
+      &::-moz-progress-bar {
+        background-color: rgba(fn.get-color($key), 1);
+      }
 
-    &::-webkit-progress-bar {
-      background-color: rgba($color: #00ff00, $alpha: 0.3);
-      border-radius: 2px;
-    }
-    &::-webkit-progress-value {
-      background-color: rgba($color: #00ff00, $alpha: 1);
-      border-radius: 2px;
-    }
-  }
-
-  [data-status='dash'] & {
-    &[value] {
-      background-color: rgba($color: #a461d8, $alpha: 0.3);
-    }
-    &::-moz-progress-bar {
-      background-color: rgba($color: #a461d8, $alpha: 1);
-    }
-
-    &::-webkit-progress-bar {
-      background-color: rgba($color: #a461d8, $alpha: 0.3);
-      border-radius: 2px;
-    }
-    &::-webkit-progress-value {
-      background-color: rgba($color: #a461d8, $alpha: 1);
-      border-radius: 2px;
-    }
-  }
-
-  [data-status='down'] & {
-    &[value] {
-      background-color: rgba($color: #fc5a5a, $alpha: 0.3);
-    }
-    &::-moz-progress-bar {
-      background-color: rgba($color: #fc5a5a, $alpha: 1);
-    }
-
-    &::-webkit-progress-bar {
-      background-color: rgba($color: #fc5a5a, $alpha: 0.3);
-      border-radius: 2px;
-    }
-    &::-webkit-progress-value {
-      background-color: rgba($color: #fc5a5a, $alpha: 1);
-      border-radius: 2px;
+      &::-webkit-progress-bar {
+        background-color: rgba(fn.get-color($key), 0.3);
+        border-radius: 2px;
+      }
+      &::-webkit-progress-value {
+        background-color: rgba(fn.get-color($key), 1);
+        border-radius: 2px;
+      }
     }
   }
 }
 
-.reports-status {
+.reports-icon {
   flex-shrink: 0;
 
   width: 20px;
@@ -135,30 +104,16 @@
 
   use {
     opacity: 0;
-    fill: var(--Text-body, #fafafb);
+    fill: fn.get-color("light-primary");
   }
 
-  [data-status='up'] & {
-    background-color: var(--Text-success, #82c43c);
+  @each $key, $value in $reports-status {
+    [data-status="#{$value}"] & {
+      background-color: fn.get-color($key);
 
-    .up {
-      opacity: 1;
-    }
-  }
-
-  [data-status='dash'] & {
-    background-color: var(--Text-warning, #a461d8);
-
-    .dash {
-      opacity: 1;
-    }
-  }
-
-  [data-status='down'] & {
-    background-color: var(--Text-danger, #fc5a5a);
-
-    .down {
-      opacity: 1;
+      .#{$value} {
+        opacity: 1;
+      }
     }
   }
 }

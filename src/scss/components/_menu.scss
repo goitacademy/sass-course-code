@@ -1,34 +1,35 @@
-@use '../utils/placeholders';
-@use '../utils/functions' as fn;
-@use '../utils/mixins' as mx;
+@use "../utils/placeholders";
+@use "../utils/functions" as fn;
+@use "../utils/mixins" as mx;
 
 .menu {
   position: relative;
   width: 100%;
   height: 100%;
 
-  background-color: fn.get-color('dark-secondary');
-  @include mx.mq('lg', 'max') {
+  background-color: fn.get-color("dark-secondary");
+  @include mx.mq("lg", "max") {
+    @include mx.ease("fast", transform);
+
     max-width: 248px;
 
     transform: translateX(-100%);
-    transition: 300ms ease-out 0ms;
 
     .sidebar.is-open & {
       transform: translateX(0);
-      transition: 300ms ease-out 300ms;
+      transition-delay: 300ms;
     }
   }
 }
 
 .menu-list {
   border-top: 1px solid;
-  border-color: fn.get-color('dark-tertiary');
+  border-color: fn.get-color("dark-tertiary");
 }
 
 .menu-link {
   @extend %details;
-  @include mx.ease('fast', color);
+  @include mx.ease("fast", color);
 
   position: relative;
 
@@ -39,14 +40,14 @@
 
   &:hover,
   &:focus {
-    color: fn.get-color('light-primary');
+    color: fn.get-color("light-primary");
   }
 
   &.current {
-    color: fn.get-color('light-primary');
+    color: fn.get-color("light-primary");
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 50%;
       left: 0;
@@ -57,13 +58,13 @@
       height: 32px;
 
       border-radius: 0px 100px 100px 0px;
-      background-color: fn.get-color('light-primary');
+      background-color: fn.get-color("light-primary");
     }
   }
 }
 
 .menu-icon {
-  fill: fn.get-color('current');
+  fill: fn.get-color("current");
 }
 
 .menu-notification {

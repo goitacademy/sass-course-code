@@ -1,6 +1,6 @@
-@use '../../utils/placeholders';
-@use '../../utils/mixins' as mx;
-@use '../../utils/functions' as fn;
+@use "../../utils/placeholders";
+@use "../../utils/mixins" as mx;
+@use "../../utils/functions" as fn;
 
 .board {
   display: flex;
@@ -17,7 +17,11 @@
   justify-content: space-between;
   gap: 43px;
 
-  background-color: var(--Background-secondary-1, #1c1c24);
+  background-color: fn.get-color("dark-tertiary");
+
+  @include mx.mq("xl") {
+    background-color: fn.get-color("dark-secondary");
+  }
 
   &.hide {
     display: none;
@@ -28,17 +32,17 @@
   @extend %accent-text;
 
   margin-bottom: 8px;
-  color: var(--Text-body, #fafafb);
+  color: fn.get-color("light-primary");
 }
 
 .board-details {
   @extend %details;
 
   margin-bottom: 20px;
-  color: var(--Text-body, #fafafb);
+  color: fn.get-color("light-primary");
 
   time {
-    color: var(--Text-body-2, #b5b5be);
+    color: fn.get-color("light-secondary");
   }
 }
 
@@ -53,5 +57,5 @@
 
   margin-bottom: auto;
   text-align: right;
-  color: var(--Text-body-2, #b5b5be);
+  color: fn.get-color("light-secondary");
 }
