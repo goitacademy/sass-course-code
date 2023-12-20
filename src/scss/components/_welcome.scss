@@ -1,3 +1,7 @@
+@use 'btn/btn' as btn with (
+  $btn-layer-spacing: 4px
+);
+
 .welcome {
   grid-area: welcome;
 }
@@ -6,6 +10,4 @@
 .page-title-accent {
 }
 .welcome-btn {
-}
-.welcome-btn-icon {
 }

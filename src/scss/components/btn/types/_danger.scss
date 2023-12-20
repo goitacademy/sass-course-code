@@ -1,0 +1,21 @@
+@if index($btn-types, danger) {
+  /* == Danger == */
+  .btn--danger {
+    background-color: #fc5a5a;
+
+    &:active {
+      background-color: darken(#fc5a5a, 10%);
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: lighten(#fc5a5a, 10%);
+      }
+    }
+
+    &[disabled] {
+      background-color: #b5b5be;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@if index($btn-types, primary) {
+  /* ==Primary == */
+  .btn--primary {
+    background-color: #f07f2e;
+
+    &:active {
+      background-color: #d14a00;
+    }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        background-color: #f15c27;
+        box-shadow: 0px 4px 10px 0px rgba(240, 127, 46, 0.25);
+      }
+    }
+
+    &[disabled] {
+      background-color: #b5b5be;
+    }
+  }
+}

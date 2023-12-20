@@ -1,0 +1,36 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: $btn-layer-spacing;
+
+  min-width: $btn-layer-min-width;
+  min-height: $btn-layer-min-height;
+  padding: $btn-padding-y $btn-padding-x;
+
+  color: $btn-text-color;
+  border-radius: $btn-layer-border-radius;
+
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+
+  // Normalize for tag <button>
+  font: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  margin: 0;
+  overflow: visible;
+  cursor: pointer;
+
+  .btn-inner {
+    font-size: $btn-text-size;
+    font-weight: $btn-text-weight;
+    line-height: calc($btn-line-height / $btn-text-size);
+    letter-spacing: #{calc($btn-text-spacing / $btn-text-size)}em;
+  }
+
+  .btn-icon {
+    fill: currentColor;
+  }
+}
