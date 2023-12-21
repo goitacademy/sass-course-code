@@ -1,0 +1,18 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+.logo {
+  @extend %main-title;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  color: fn.get-color('accent-primary');
+
+  @include mx.mq('lg') {
+    padding: 16px 20px;
+  }
+}
