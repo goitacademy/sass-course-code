@@ -1,0 +1,18 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
+@each $value in 'danger', 'warning', 'success' {
+  .badge-#{$value} {
+    @extend %details-accent;
+
+    min-width: 96px;
+    padding: 4px 8px;
+
+    text-align: center;
+    color: fn.get-color('light-primary');
+    border-radius: 20px;
+    background-color: fn.get-color($value);
+  }
+}

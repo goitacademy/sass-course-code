@@ -1,27 +1,107 @@
+@use '../utils/placeholders';
+@use '../utils/variables' as var;
+@use '../utils/functions' as fn;
+@use '../utils/mixins' as mx;
+
 .tasks {
+  @extend %section-frame;
+
   grid-area: tasks;
+
+  min-width: 340px;
+  max-height: 420px;
+
+  background-color: fn.get-color('dark-tertiary');
 }
 .tasks-title {
+  @extend %details;
+
+  margin-bottom: 36px;
+  color: fn.get-color('light-secondary');
+
+  span {
+    @extend %accent-text;
+    color: fn.get-color('light-primary');
+  }
 }
 .tasks-list {
+  @include mx.scroll-bar;
+
+  max-height: 288px;
+  overflow: auto;
+
+  @include mx.mq('lg') {
+    margin-right: -14px;
+  }
 }
 .tasks-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 16px 8px;
+  border-top: 1px solid;
+  border-color: fn.get-color('light-tertiary');
 }
 .tasks-checkbox {
-}
-.tasks-input {
-}
-.visually-hidden {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 .tasks-checkbox-icon {
+  @include mx.ease('fast', fill, background-color, border-color);
+
+  fill: fn.get-color('transparent');
+  border: 1px solid;
+  border-color: fn.get-color('light-tertiary');
+  border-radius: 4px;
+
+  .tasks-input:checked + & {
+    fill: fn.get-color('light-primary');
+    background-color: fn.get-color('accent-primary');
+    border-color: fn.get-color('transparent');
+  }
+
+  .tasks-input:focus-visible + & {
+    outline: 2px solid;
+    outline-color: fn.get-color('light-tertiary');
+    outline-offset: 2px;
+  }
 }
 .tasks-info {
+  flex-grow: 1;
 }
 .tasks-heading {
+  @extend %details;
+
+  color: fn.get-color('light-primary');
 }
 .tasks-desc {
+  @extend %details;
+
+  color: fn.get-color('light-secondary');
 }
 .tasks-btn {
-}
-.tasks-btn-icon {
+  @include mx.ease('fast', outline);
+
+  width: 20px;
+  height: 20px;
+  color: fn.get-color('light-tertiary');
+  border-radius: 50%;
+
+  &:focus-visible {
+    outline: 2px solid;
+    outline-color: rgba(fn.get-color('light-tertiary'), 0.6);
+    outline-offset: 3px;
+  }
+
+  &-icon {
+    fill: fn.get-color('current');
+  }
 }

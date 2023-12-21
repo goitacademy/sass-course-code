@@ -1,0 +1,65 @@
+@use '../../utils/placeholders';
+@use '../../utils/variables' as var;
+@use '../../utils/functions' as fn;
+@use '../../utils/mixins' as mx;
+
+.co-workers {
+  grid-area: co-workers;
+
+  @include mx.mq('xl') {
+    padding: 20px;
+    background-color: fn.get-color('dark-tertiary');
+    border-radius: 12px;
+  }
+}
+
+.co-workers-wrapper {
+  max-height: 388px;
+  padding: 16px;
+  margin-bottom: 40px;
+
+  border-radius: 12px;
+  background-color: fn.get-color('dark-tertiary');
+
+  @include mx.mq('xl') {
+    max-height: 400px;
+    padding: 24px;
+    margin-bottom: 32px;
+    background-color: fn.get-color('dark-secondary');
+  }
+}
+
+.co-workers-title {
+  @extend %details;
+
+  margin-bottom: 28px;
+
+  @include mx.mq('xl') {
+    margin-bottom: 36px;
+  }
+
+  span {
+    @extend %accent-text;
+  }
+}
+
+.co-workers-container {
+  @include mx.scroll-bar;
+
+  max-height: 296px;
+
+  overflow-y: auto;
+
+  @include mx.mq('lg') {
+    margin-right: -14px;
+  }
+}
+
+.co-workers-board {
+  margin-bottom: 20px;
+}
+
+.co-workers-btn {
+  display: block;
+  margin: 0 auto;
+}
